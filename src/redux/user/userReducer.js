@@ -1,6 +1,5 @@
 import { userTypes } from "./userTypes";
 
-
 const INITIAL_STATE = {
 	currentUser: null
 };
