@@ -11,8 +11,8 @@ import { setCurrentUser } from "./redux/user/userAction";
 import { auth, createUserProfileDocument } from "./firebase/firebase";
 import { selectCurrentUser } from "./redux/user/userSelector";
 import CheckoutPage from "./pages/checkout/Checkout";
-
 import "./App.scss";
+import Category from "./pages/collection/Collection";
 
 class App extends Component {
 	unsubscribeFromAuth = null;
@@ -42,6 +42,7 @@ class App extends Component {
 					<Route exact path="/" component={HomePage} />
 					<Route exact path="/shop" component={ShopPage} />
 					<Route exact path="/checkout" component={CheckoutPage} />
+					<Route exact path="/shop/:categoryId" component={Category} />
 					<Route
 						exact
 						path="/signin"

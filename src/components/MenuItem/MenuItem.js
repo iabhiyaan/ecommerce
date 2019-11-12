@@ -2,8 +2,9 @@ import React from "react";
 import "./MenuItem.css";
 import { withRouter } from "react-router-dom";
 const MenuItem = ({ title, imageUrl, size, linkUrl, history, match }) => {
+	console.log(match);
 	const handleClick = e => {
-		history.push(`${match.url}${linkUrl}`);
+		history.push(`shop/${linkUrl}`);
 	};
 	return (
 		<div className={`${size} menu-item`} onClick={handleClick}>
