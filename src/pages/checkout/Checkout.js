@@ -3,9 +3,9 @@ import { connect } from "react-redux";
 import { createStructuredSelector } from "reselect";
 
 import { selectCartItems, selectCartTotal } from "../../redux/cart/cartSelector";
-
-import "./Checkout.scss";
 import CheckoutItem from "../../components/CheckoutItem/CheckoutItem";
+import StripeButton from "../../components/StripeButton/StripeButton";
+import "./Checkout.scss";
 
 const CheckoutPage = ({ cartItems, total }) => (
 	<div className="checkout-page">
@@ -30,6 +30,12 @@ const CheckoutPage = ({ cartItems, total }) => (
 		<div className="total">
 			<span>TOTAL: ${total}</span>
 		</div>
+		<div className="test-warning">
+			* Please us follwing test credit card fo payment
+			<br/>
+			4242 4242 4242 4242 - Exp: 01/20 - CVC: 123
+		</div>
+		<StripeButton price={total} />
 	</div>
 );
 
